@@ -32,6 +32,7 @@ pipeline {
                 script {
                     echo "Listing files"
                     sh 'ls -lart'
+                    sh 'terraform version'
                     // Initialize Terraform
                     sh 'terraform init'
                 }
