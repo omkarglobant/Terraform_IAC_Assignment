@@ -7,7 +7,8 @@ pipeline {
                 script {
                     // Print "Hello, World!" to the console
                     echo 'Hello, World!'
-                    sh 'terraform --version'
+                    // sh 'terraform --version'
+                    sh 'echo Hello'
                 }
             }
         }
