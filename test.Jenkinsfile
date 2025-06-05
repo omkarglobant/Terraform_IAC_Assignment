@@ -12,8 +12,9 @@ pipeline {
                     // Print "Hello, World!" to the console
                     echo 'Hello, World!'
                     sh 'whoami'
-                    sh 'terraform version'
+                    // sh 'terraform version'
                     sh 'echo Hello'
+                    sh 'file /Users/omkar.tirodkar/.jenkins/tools/org.jenkinsci.plugins.terraform.TerraformInstallation/terraform-latest/terraform'
                 }
             }
         }
