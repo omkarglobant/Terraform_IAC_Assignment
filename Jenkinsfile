@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        terraform 'terraform-latest1'
+        terraform 'terraform-12'
     }
 
     stages {
