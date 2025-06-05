@@ -2,7 +2,7 @@ pipeline {
     agent any  // This specifies that the pipeline can run on any available agent
 
     tools {
-        terraform 'terraform-latest'
+        terraform 'terraform-latest1'
     }
 
     stages {
