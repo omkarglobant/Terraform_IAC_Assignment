@@ -30,6 +30,8 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
+                    echo "Listing files"
+                    sh 'ls -lart'
                     // Initialize Terraform
                     sh 'terraform init'
                 }
