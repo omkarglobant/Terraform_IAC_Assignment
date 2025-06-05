@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    // tools {
-    //     terraform
-    // }
+    tools {
+        terraform 'terraform-latest1'
+    }
 
     stages {
 
@@ -13,22 +13,6 @@ pipeline {
                 checkout scm
             }
         }
-
-        // stage('Install Terraform') {
-        //     steps {
-        //         script {
-        //             // Download and install Terraform
-        //             def terraformVersion = '1.12.1' // Specify the version of Terraform you want to install
-        //             sh """
-        //             curl -LO https://releases.hashicorp.com/terraform/${terraformVersion}/terraform_${terraformVersion}_linux_amd64.zip
-        //             unzip -o terraform_${terraformVersion}_linux_amd64.zip
-        //             mv terraform /usr/local/bin/
-        //             chmod +x /usr/local/bin/terraform
-        //             terraform version
-        //             """
-        //         }
-        //     }
-        // }
 
         stage('Set AWS Credentials') {
             steps {
