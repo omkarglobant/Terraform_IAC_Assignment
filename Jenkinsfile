@@ -21,7 +21,7 @@ pipeline {
                     def terraformVersion = '1.12.1' // Specify the version of Terraform you want to install
                     sh """
                     curl -LO https://releases.hashicorp.com/terraform/${terraformVersion}/terraform_${terraformVersion}_linux_amd64.zip
-                    unzip terraform_${terraformVersion}_linux_amd64.zip
+                    unzip -o terraform_${terraformVersion}_linux_amd64.zip
                     mv terraform /usr/local/bin/
                     chmod +x /usr/local/bin/terraform
                     terraform version
