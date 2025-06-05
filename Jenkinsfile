@@ -1,9 +1,8 @@
 pipeline {
     agent any
 
-    environment {
-        // Define any environment variables here
-        TF_VAR_example = 'value' // Example of passing variables to Terraform
+    tools {
+        terraform 'terraform-1.12.1'
     }
 
     stages {
@@ -15,21 +14,21 @@ pipeline {
             }
         }
 
-        stage('Install Terraform') {
-            steps {
-                script {
-                    // Download and install Terraform
-                    def terraformVersion = '1.12.1' // Specify the version of Terraform you want to install
-                    sh """
-                    curl -LO https://releases.hashicorp.com/terraform/${terraformVersion}/terraform_${terraformVersion}_linux_amd64.zip
-                    unzip terraform_${terraformVersion}_linux_amd64.zip
-                    sudo mv terraform /usr/local/bin/
-                    sudo chmod +x /usr/local/bin/terraform
-                    terraform version
-                    """
-                }
-            }
-        }
+        // stage('Install Terraform') {
+        //     steps {
+        //         script {
+        //             // Download and install Terraform
+        //             def terraformVersion = '1.12.1' // Specify the version of Terraform you want to install
+        //             sh """
+        //             curl -LO https://releases.hashicorp.com/terraform/${terraformVersion}/terraform_${terraformVersion}_linux_amd64.zip
+        //             unzip terraform_${terraformVersion}_linux_amd64.zip
+        //             sudo mv terraform /usr/local/bin/
+        //             sudo chmod +x /usr/local/bin/terraform
+        //             terraform version
+        //             """
+        //         }
+        //     }
+        // }
 
         stage('Set AWS Credentials') {
             steps {
