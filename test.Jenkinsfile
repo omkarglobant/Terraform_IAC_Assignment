@@ -11,6 +11,7 @@ pipeline {
                 script {
                     // Print "Hello, World!" to the console
                     echo 'Hello, World!'
+                    sh 'whoami'
                     sh 'terraform version'
                     sh 'echo Hello'
                 }
